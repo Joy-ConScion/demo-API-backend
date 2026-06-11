@@ -10,6 +10,9 @@ public class Candidate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private boolean visible;
+
     private Long id;
 
     private String name;
@@ -37,6 +40,13 @@ public class Candidate {
     }
     public void setRegisteredAt(LocalDateTime registeredAt) {
         this.registeredAt = registeredAt;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public Long getId() {
