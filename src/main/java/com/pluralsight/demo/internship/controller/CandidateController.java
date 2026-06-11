@@ -2,11 +2,9 @@ package com.pluralsight.demo.internship.controller;
 
 import com.pluralsight.demo.internship.model.Candidate;
 import com.pluralsight.demo.internship.service.CandidateService;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,6 +30,13 @@ public class CandidateController {
             candidates = candidateService.getAllCandidates();
         }
         return ResponseEntity.ok(candidates);
+    }
+
+    @GetMapping("/search/name/{Name}")
+    public ResponseEntity<List<Candidate>> searchByName(@PathVariable String Name) {
+        List<Candidate> candidates = candidateService.getAllCandidates();
+        return ResponseEntity.ok(candidates);
+//        return ResponseEntity.ok(candidates);
     }
 
 @GetMapping("/{id}")
