@@ -2,6 +2,8 @@ package com.pluralsight.demo.internship.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "candidates")
 public class Candidate {
@@ -16,6 +18,8 @@ public class Candidate {
     
     private String fieldOfStudy;
 
+    private LocalDateTime registeredAt;
+
     // Constructors
     public Candidate() {
     }
@@ -27,6 +31,14 @@ public class Candidate {
     }
 
     // Getters and Setters
+
+    public LocalDateTime getRegisteredAt() {
+        return registeredAt;
+    }
+    public void setRegisteredAt(LocalDateTime registeredAt) {
+        this.registeredAt = registeredAt;
+    }
+
     public Long getId() {
         return id;
     }
