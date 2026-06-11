@@ -32,12 +32,19 @@ public class CandidateController {
         return ResponseEntity.ok(candidates);
     }
 
-    @GetMapping("/search/name/{Name}")
+    @GetMapping("/search/name/{name}")
     public ResponseEntity<List<Candidate>> searchByName(@PathVariable String Name) {
         List<Candidate> candidates = candidateService.getAllCandidates();
         return ResponseEntity.ok(candidates);
 //        return ResponseEntity.ok(candidates);
     }
+
+    @GetMapping("/search/name/{email}")
+    public ResponseEntity<List<Candidate>> searchByEmail(@PathVariable String email) {
+        List<Candidate> candidates = candidateService.getAllCandidates();
+        return ResponseEntity.ok(candidates);
+    }
+
 
 @GetMapping("/{id}")
 public ResponseEntity<Candidate> getCandidateById(@PathVariable Long id) {
